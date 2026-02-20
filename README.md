@@ -10,13 +10,15 @@ Codex CLI 및 Gemini CLI를 활용한 로직 최적화·프론트엔드 UI/UX �
 2. 다음 명령어로 플러그인을 설치합니다:
 
 ```bash
-claude plugin install https://github.com/Mineru98/llm-proxy-skills.git
+claude plugin marketplace add Mineru98/llm-proxy-skills
+/plugin marketplace add Mineru98/llm-proxy-skills
 ```
 
 또는
 
 ```bash
 claude plugin install llm-proxy-skills
+/plugin install llm-proxy-skills
 ```
 
 3. 설치 후 사용 가능한 스킬을 확인합니다:
@@ -32,6 +34,7 @@ claude plugin list
 Codex CLI `--yolo` 모드로 로직 최적화 및 이미지 기반 코드 작업을 수행합니다.
 
 **사용 시점:**
+
 - 로직 최적화: 알고리즘 개선, 성능 튜닝
 - 이미지 기반 작업: 스크린샷, 목업, 다이어그램에서 코드 생성
 - 리팩토링: 함수 추출, 조건문 단순화, 복잡도 감소
@@ -39,6 +42,7 @@ Codex CLI `--yolo` 모드로 로직 최적화 및 이미지 기반 코드 작업
 - 디버깅: 복잡한 로직 버그, 레이스 컨디션 수정
 
 **사용하지 않는 시점:**
+
 - 시각/스타일 변경 (이 경우 `frontend-master` 사용)
 
 ### frontend-master
@@ -46,6 +50,7 @@ Codex CLI `--yolo` 모드로 로직 최적화 및 이미지 기반 코드 작업
 Gemini CLI `--yolo` 모드로 프론트엔드 UI/UX 작업을 수행합니다.
 
 **사용 시점:**
+
 - 시각적 변경: 색상, 배경, 테두리, 그림자
 - 레이아웃: flexbox, grid, margin, padding, positioning
 - 타이포그래피: 폰트 크기, 굵기, 줄 높이
@@ -54,6 +59,7 @@ Gemini CLI `--yolo` 모드로 프론트엔드 UI/UX 작업을 수행합니다.
 - 컴포넌트 스타일링: Tailwind, CSS-in-JS, styled-components
 
 **사용하지 않는 시점:**
+
 - 순수 로직 변경 (API 호출, 상태 관리, 이벤트 핸들러)
 - 타입 정의, 유틸 함수, 비즈니스 로직
 - 로직 최적화 또는 이미지 기반 작업 (이 경우 `logic-master` 사용)
