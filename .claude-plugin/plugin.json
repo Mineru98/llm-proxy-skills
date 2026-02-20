@@ -1,6 +1,6 @@
 {
   "name": "llm-proxy-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LLM Proxy Skills plugin with logic-master (Codex CLI) and frontend-master (Gemini CLI) for code optimization and UI/UX tasks",
   "author": {
     "name": "Mineru",

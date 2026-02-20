@@ -10,7 +10,7 @@
     {
       "name": "llm-proxy-skills",
       "description": "logic-master (Codex) and frontend-master (Gemini) skills for code optimization and UI/UX tasks",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Mineru",
         "email": "mineru@usefullabs.co.kr"
