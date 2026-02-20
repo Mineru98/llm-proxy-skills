@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "llm-proxy-skills",
+  "description": "Logic optimization and frontend UI/UX skills using Codex CLI and Gemini CLI",
+  "owner": {
+    "name": "Mineru",
+    "email": "mineru@usefullabs.co.kr"
+  },
+  "plugins": [
+    {
+      "name": "llm-proxy-skills",
+      "description": "logic-master (Codex) and frontend-master (Gemini) skills for code optimization and UI/UX tasks",
+      "version": "1.0.0",
+      "author": {
+        "name": "Mineru",
+        "email": "mineru@usefullabs.co.kr"
+      },
+      "source": "./",
+      "category": "development",
+      "homepage": "https://github.com/Mineru98/llm-proxy-skills",
+      "tags": ["codex", "gemini", "logic", "frontend", "cli"]
+    }
+  ]
+}

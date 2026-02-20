@@ -1,0 +1,20 @@
+{
+  "name": "llm-proxy-skills",
+  "version": "1.0.0",
+  "description": "LLM Proxy Skills plugin with logic-master (Codex CLI) and frontend-master (Gemini CLI) for code optimization and UI/UX tasks",
+  "author": {
+    "name": "Mineru",
+    "email": "mineru@usefullabs.co.kr",
+    "url": "https://github.com/Mineru98"
+  },
+  "homepage": "https://github.com/Mineru98/llm-proxy-skills#readme",
+  "repository": "https://github.com/Mineru98/llm-proxy-skills",
+  "license": "GPL-3.0",
+  "keywords": [
+    "codex",
+    "gemini",
+    "logic",
+    "frontend",
+    "cli"
+  ]
+}
