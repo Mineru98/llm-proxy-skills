@@ -9,12 +9,6 @@
   },
   "homepage": "https://github.com/Mineru98/llm-proxy-skills#readme",
   "repository": "https://github.com/Mineru98/llm-proxy-skills",
-  "license": "GPL-3.0",
-  "keywords": [
-    "codex",
-    "gemini",
-    "logic",
-    "frontend",
-    "cli"
-  ]
+  "license": "MIT",
+  "keywords": ["codex", "gemini", "logic", "frontend", "cli"]
 }
