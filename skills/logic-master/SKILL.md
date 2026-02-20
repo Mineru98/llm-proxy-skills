@@ -40,15 +40,29 @@ codex exec --yolo -C <directory> "<instruction>"
 
 ### Required Flags
 
-| Flag | Purpose |
-|------|---------|
-| `--yolo` | **MANDATORY** - Auto-approve and bypass sandbox |
-| `--image` or `-i` | Attach image files for visual context |
-| `--json` | Get JSONL event stream for parsing |
-| `-o` or `--output-last-message` | Save final output to file |
-| `-C` or `--cd` | Change working directory |
-| `--sandbox` | Set access level (workspace-write recommended) |
-| `--model` or `-m` | Override model selection |
+| Flag                            | Purpose                                         |
+| ------------------------------- | ----------------------------------------------- |
+| `--yolo`                        | **MANDATORY** - Auto-approve and bypass sandbox |
+| `--image` or `-i`               | Attach image files for visual context           |
+| `--json`                        | Get JSONL event stream for parsing              |
+| `-o` or `--output-last-message` | Save final output to file                       |
+| `-C` or `--cd`                  | Change working directory                        |
+| `--sandbox`                     | Set access level (workspace-write recommended)  |
+| `-c, --config`                  | Override config value; for this skill, only `model_reasoning_effort` should be adjusted (예: `-c model_reasoning_effort="xhigh"`) |
+
+### Model Routing (Performance-oriented)
+
+- **이미지 기반 작업(`--image` 사용)**은 반드시 `gpt-5.3-codex` 사용.
+- **이미지 미사용 작업은 가벼운 요청에서는 `gpt-5.3-codex-spark` 사용**.
+- **복잡/대규모/고난도 작업은 `gpt-5.3-codex` 사용**.
+- **모델 자체는 전환하지 않고, 조절은 `model_reasoning_effort`만 수행**.
+
+실무 예시:
+```bash
+codex exec --yolo --image screenshot.png -c model_reasoning_effort=\"xhigh\" "Analyze image context"
+codex exec --yolo -c model_reasoning_effort=\"low\" "Refactor a small utility function"
+codex exec --yolo -c model_reasoning_effort=\"xhigh\" "Redesign a complex scheduling algorithm"
+```
 
 ### Workflow
 
@@ -188,17 +202,18 @@ codex exec --yolo --image ui-mockup.png "Generate React component code for this 
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| Image not recognized | Use absolute path or ensure file exists |
-| Command hangs | Ensure `--yolo` flag is present |
-| Sandbox errors | Add `--sandbox workspace-write` |
-| Large output truncated | Use `-o <file>` to save full output |
-| Model unavailable | Try `--model gpt-4o` or check API key |
+| Issue                  | Solution                                       |
+| ---------------------- | ---------------------------------------------- |
+| Image not recognized   | Use absolute path or ensure file exists        |
+| Command hangs          | Ensure `--yolo` flag is present                |
+| Sandbox errors         | Add `--sandbox workspace-write`                |
+| Large output truncated | Use `-o <file>` to save full output            |
+| 모델 품질/속도 조절      | 과도한 결과 변동이 있으면 `model_reasoning_effort` (`low`, `medium`, `high`, `xhigh`) 값만 조정 |
 
 ## Security Note
 
 `--yolo` mode bypasses approval and sandbox restrictions. Use only when:
+
 - Working in version-controlled directories
 - Changes can be easily reverted
 - No sensitive operations or credentials involved
